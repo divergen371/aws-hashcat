@@ -1,3 +1,4 @@
 #!/bin/bash
 
-scp -i ~/.ssh/AWS-Hashcat.pem -r ./tools $1@$2
+scp -v -r -i $1 ./tools $2@$3:~/
+
