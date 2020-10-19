@@ -1,14 +1,21 @@
-from subprocess import check_call, CalledProcessError
-import os
+from subprocess import run, CalledProcessError
+import os, sys
 import urllib
 
-update = check_call(["sudo", "apt", "update"], stdout=open(os.devnull, "wb"))
-upgrade = check_call(["sudo", "apt", "upgrade"], stdout=open(os.devnull, "wb"))
+update = ["sudo", "apt-get", "-y", "update"]
+upgrade = ["sudo", "apt-get", "-y", "upgrade"]
+install1 = ["sudo", "apt-get", "-y", "install", "clinfo", "unzip", "p7zip-full"]
+pip = ["pip3", "install", "psutil"]
 
-apt = [update, upgrade]
 
-for comm in apt:
-    try:
-        comm
-    except CalledProcessError as e:
-        print(e.output)
+command = [update, upgrade, install1, pip]
+
+if os.path.isfile("/var/lib/dpkg/lock-frontend"):
+    print("Now dpkg running. Try it in a few minutes:)")
+
+else:
+    for c in command:
+        try:
+            res = run(c, stdout=sys.stdout)
+        except CalledProcessError as e:
+            print(e.output)
