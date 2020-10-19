@@ -1,8 +1,10 @@
-from subprocess import run, CalledProcessError
-from bs4 import BeautifulSoup
-import requests
-import os, sys
+import os
+import sys
 import urllib.request
+from subprocess import CalledProcessError, run
+
+import requests
+from bs4 import BeautifulSoup
 
 
 def apt_update():
@@ -18,7 +20,7 @@ def apt_update():
     else:
         for c in command:
             try:
-                res = run(c, stdout=sys.stdout)
+                run(c)
             except CalledProcessError as e:
                 print(e.output)
 
