@@ -8,15 +8,14 @@ fi
 if [ ! -e ~/.updatefin ]; then
     sudo apt update
     sudo apt upgrade
-    sudo apt install clinfo unzip p7zip-full
+    sudo apt install clinfo unzip p7zip-full python3-pip
     #sudo apt install build-essential linux-headers-$(uname -r)
-    pip3 install psutil
+    pip3 install psutil requests beautifulsoup4
     touch ~/.updatefin
 
     echo "update completed"
-    exit 1
 fi
+rm  ~/.updatefin
 
-echo "Download hashcaaaat"
-wget https://hashcat.net/files/hashcat-6.1.1.7z
-7z x hashcat-6.1.1.7z
+
+python3 ./Downloader.py
