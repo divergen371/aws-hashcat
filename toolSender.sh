@@ -1,4 +1,4 @@
 #!/bin/bash
 
-scp -v -r -i $1 ./tools $2@$3:~/
+scp -v -r -i $1 ./hashcatTools $2@$3:~/
 
