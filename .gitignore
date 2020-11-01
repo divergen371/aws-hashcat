@@ -135,4 +135,5 @@ cdk.context.json
 .pylintrc
 Pipfile.lock
 bin/
+hashcatTools/
 
