@@ -129,10 +129,9 @@ dmypy.json
 .pyre/
 .vscode
 *.pem
-cdk.out
+cdk.out/
 cdk.context.json
 .idea
 .pylintrc
-Pipfile.lock
-./bin/
+bin/
 
