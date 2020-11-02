@@ -39,7 +39,7 @@ class AWSHashCat(core.Stack):
             "AWS-HahscatInstance",
             instance_type=ec2.InstanceType("g4dn.xlarge"),
             machine_image=ec2.MachineImage.generic_linux(
-                {"ap-northeast-1": "ami-0eadf19d2c3f42603"}
+                {"ap-northeast-1": "ami-05290c2598856a2a3"}
             ),
             vpc=vpc,
             vpc_subnets=ec2.SubnetSelection(subnet_type=ec2.SubnetType.PUBLIC),

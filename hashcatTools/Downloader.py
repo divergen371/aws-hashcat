@@ -54,7 +54,7 @@ def downloadHashcat():
     try:
         urllib.request.urlretrieve(hashcat_latest, save_name)
         print("Download complete.")
-        time.sleep(1.5)
+        time.sleep(2)
     except urllib.error.URLError as urlError:  # 例外処理これでいいのか？
         print(urlError)
     if os.path.isfile(save_name):
