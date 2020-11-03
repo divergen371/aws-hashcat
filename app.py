@@ -33,10 +33,11 @@ class AWSHashCat(core.Stack):
             peer=ec2.Peer.any_ipv4(),
             connection=ec2.Port.tcp(22),
         )
+                }
 
         host = ec2.Instance(
             self,
-            "AWS-HahscatInstance",
+            "AWS-HashcatInstance",
             instance_type=ec2.InstanceType("g4dn.xlarge"),
             machine_image=ec2.MachineImage.generic_linux(
                 {"ap-northeast-1": "ami-05290c2598856a2a3"}

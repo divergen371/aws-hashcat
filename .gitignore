@@ -134,5 +134,5 @@ cdk.context.json
 .idea
 .pylintrc
 Pipfile.lock
-./bin/
+bin/
 
