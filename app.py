@@ -33,7 +33,7 @@ class AWSHashCat(core.Stack):
             peer=ec2.Peer.any_ipv4(),
             connection=ec2.Port.tcp(22),
         )
-                }
+                
 
         host = ec2.Instance(
             self,
