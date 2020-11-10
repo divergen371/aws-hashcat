@@ -82,7 +82,7 @@ def downloadWordlist():
     rockyou = [
         "wget",
         "-nH",
-        "http://downloads.skullsecurity.org/passwords/rockyou.txt.bz2",
+        "https://downloads.skullsecurity.org/passwords/rockyou.txt.bz2",
         "-O",
         "./wordLists/rockyou.txt.bz2",
     ]
