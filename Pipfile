@@ -12,6 +12,7 @@ black = "*"
 "aws-cdk.aws-ec2" = "*"
 requests = "*"
 beautifulsoup4 = "*"
+xtract = "*"
 
 [requires]
 python_version = "3.8"

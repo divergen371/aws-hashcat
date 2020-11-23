@@ -4,7 +4,7 @@ import urllib.request
 import sys
 import time
 from subprocess import CalledProcessError, run
-
+from xtract import xtract
 import requests
 from bs4 import BeautifulSoup
 
@@ -67,10 +67,8 @@ def downloadHashcat():
 
 
 def downloadWordlist():
-    if os.path.exists("~/wordLists"):
-        pass
-    else:
-        run(["mkdir", "wordLists"])
+    if not os.path.isdir("./wordLists"):
+        os.makedirs("./wordLists")
 
     SecLists = [
         "git",
@@ -97,8 +95,7 @@ def downloadWordlist():
         except CalledProcessError as e:
             print(e)
 
-    os.chdir("./wordLists")
-    run(["bunzip2", "./rockyou.txt.bz2"])
+    xtract("./wordLists/rockyou.txt.bz2")
 
 
 if __name__ == "__main__":
