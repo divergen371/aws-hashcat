@@ -13,6 +13,7 @@ black = "*"
 requests = "*"
 beautifulsoup4 = "*"
 xtract = "*"
+python-magic = "*"
 
 [requires]
 python_version = "3.8"

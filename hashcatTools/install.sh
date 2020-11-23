@@ -10,7 +10,7 @@ if [ ! -e ~/.updatefin ]; then
     sudo apt upgrade
     sudo apt install clinfo unzip p7zip-full python3-pip
     #sudo apt install build-essential linux-headers-$(uname -r)
-    pip3 install psutil requests beautifulsoup4 python-magic xtract
+    pip3 install psutil requests beautifulsoup4
     touch ~/.updatefin
 
     echo "update completed"

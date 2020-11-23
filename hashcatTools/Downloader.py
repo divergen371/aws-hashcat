@@ -4,7 +4,8 @@ import urllib.request
 import sys
 import time
 from subprocess import CalledProcessError, run
-from xtract import xtract
+
+# from xtract import xtract
 import requests
 from bs4 import BeautifulSoup
 
@@ -95,7 +96,8 @@ def downloadWordlist():
         except CalledProcessError as e:
             print(e)
 
-    xtract("./wordLists/rockyou.txt.bz2")
+    os.chdir("./wordLists")
+    run("bunzip2", "./wordLists/rockyou.txt.bz2")
 
 
 if __name__ == "__main__":
